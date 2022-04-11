@@ -19,11 +19,13 @@
 	</properties>
 
 	<dependencies>
+        <!-- Oralce JDBC driver -->
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
             <version>19.3.0.0</version>
 		</dependency>
+        <!-- Oracle Wallet -->
         <dependency>
             <groupId>com.oracle.database.security</groupId>
             <artifactId>oraclepki</artifactId>
@@ -44,6 +46,7 @@
     <build>
         <plugins>
             <plugin>
+                <!-- Exec plugin configuration to simplify running the sample -->
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
@@ -59,6 +62,7 @@
                     <arguments>
                         <argument>-classpath</argument>
                         <classpath/>
+                        <!-- Disable FAN to speed up the connection -->
                         <argument>-Doracle.jdbc.fanEnabled=false</argument>
                         <argument>com.github.markxnelson.SimpleJDBCTest</argument>
                     </arguments>
