@@ -26,9 +26,9 @@ public class SimpleJDBCTest {
             PoolDataSource ds = PoolDataSourceFactory.getPoolDataSource();
             ds.setConnectionFactoryClassName("oracle.jdbc.pool.OracleDataSource");
             ds.setURL(url);
+            // when using mutual TLS the username and password are not required and you can 
+            // comment out or delete the following two lines
             ds.setUser(username);
-            // when using mutual TLS the password is not required and you can comment out 
-            // or delete the following line
             ds.setPassword(password);
 
             // try to connect to the database
