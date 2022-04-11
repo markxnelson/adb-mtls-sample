@@ -28,8 +28,8 @@ public class SimpleJDBCTest {
             ds.setURL(url);
             // when using mutual TLS the username and password are not required and you can 
             // comment out or delete the following two lines
-            ds.setUser(username);
-            ds.setPassword(password);
+            //ds.setUser(username);
+            //ds.setPassword(password);
 
             // try to connect to the database
             System.out.println("Trying to connect...");

@@ -22,17 +22,6 @@ DB_PASSWORD="$db_pwd"
 WALLET_PASSWORD="$wallet_pwd"
 umask 22
 
-# Create New User Defined Wallet to store DB Credentials
-java \
-    -classpath ${CLASSPATH} \
-    oracle.security.pki.OracleSecretStoreTextUI \
-    -nologo \
-    -wrl "$USER_DEFINED_WALLET" \
-    -create >/dev/null <<EOF
-$WALLET_PASSWORD
-$WALLET_PASSWORD
-EOF
-
 # Add User Credentials to the ATP Wallet
 java \
     -Doracle.pki.debug=true \
